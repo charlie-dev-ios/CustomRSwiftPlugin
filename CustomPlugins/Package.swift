@@ -5,19 +5,27 @@ import PackageDescription
 
 let package = Package(
     name: "CustomPlugins",
+    platforms: [
+        .macOS(.v10_15),
+        .iOS(.v11),
+        .tvOS(.v11),
+        .watchOS(.v4),
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
-        .library(
-            name: "CustomPlugins",
-            targets: ["CustomPlugins"]),
+        .plugin(name: "CustomRswiftGenerateInternalResources",
+                targets: ["CustomRswiftGenerateInternalResources"]),
+    ],
+    dependencies: [
+        .package(url: "https://github.com/mac-cain13/R.swift.git", from: "7.4.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
         // Targets can depend on other targets in this package and products from dependencies.
-        .target(
-            name: "CustomPlugins"),
-        .testTarget(
-            name: "CustomPluginsTests",
-            dependencies: ["CustomPlugins"]),
+        .plugin(name: "CustomRswiftGenerateInternalResources", 
+                capability: .buildTool(),
+                dependencies: [
+                    .product(name: "rswift", package: "R.swift")
+                ]),
     ]
 )

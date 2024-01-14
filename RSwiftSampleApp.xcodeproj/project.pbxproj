@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B882758F2B53F0E000C13566 /* RswiftLibrary in Frameworks */ = {isa = PBXBuildFile; productRef = B882758E2B53F0E000C13566 /* RswiftLibrary */; };
 		B8ED449D2B53857900F560DC /* RSwiftSampleAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED449C2B53857900F560DC /* RSwiftSampleAppApp.swift */; };
 		B8ED449F2B53857900F560DC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8ED449E2B53857900F560DC /* ContentView.swift */; };
 		B8ED44A12B53857B00F560DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8ED44A02B53857B00F560DC /* Assets.xcassets */; };
@@ -26,17 +27,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B882758F2B53F0E000C13566 /* RswiftLibrary in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B8BD94022B53EC94005122F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B8ED44902B53857900F560DC = {
 			isa = PBXGroup;
 			children = (
 				B8ED449B2B53857900F560DC /* RSwiftSampleApp */,
 				B8ED449A2B53857900F560DC /* Products */,
+				B8BD94022B53EC94005122F5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -81,8 +91,12 @@
 			buildRules = (
 			);
 			dependencies = (
+				B88275982B53F47D00C13566 /* PBXTargetDependency */,
 			);
 			name = RSwiftSampleApp;
+			packageProductDependencies = (
+				B882758E2B53F0E000C13566 /* RswiftLibrary */,
+			);
 			productName = RSwiftSampleApp;
 			productReference = B8ED44992B53857900F560DC /* RSwiftSampleApp.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +125,10 @@
 				Base,
 			);
 			mainGroup = B8ED44902B53857900F560DC;
+			packageReferences = (
+				B882758D2B53F0E000C13566 /* XCRemoteSwiftPackageReference "R" */,
+				B88275932B53F1FE00C13566 /* XCLocalSwiftPackageReference "CustomPlugins" */,
+			);
 			productRefGroup = B8ED449A2B53857900F560DC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -143,6 +161,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B88275982B53F47D00C13566 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			productRef = B88275972B53F47D00C13566 /* CustomRswiftGenerateInternalResources */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		B8ED44A52B53857B00F560DC /* Debug */ = {
@@ -280,6 +305,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -287,9 +313,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.charlie-dev.RSwiftSampleApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -309,6 +338,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -316,9 +346,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.charlie-dev.RSwiftSampleApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -344,6 +377,37 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		B88275932B53F1FE00C13566 /* XCLocalSwiftPackageReference "CustomPlugins" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = CustomPlugins;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B882758D2B53F0E000C13566 /* XCRemoteSwiftPackageReference "R" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift";
+			requirement = {
+				kind = exactVersion;
+				version = 7.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B882758E2B53F0E000C13566 /* RswiftLibrary */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B882758D2B53F0E000C13566 /* XCRemoteSwiftPackageReference "R" */;
+			productName = RswiftLibrary;
+		};
+		B88275972B53F47D00C13566 /* CustomRswiftGenerateInternalResources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B88275932B53F1FE00C13566 /* XCLocalSwiftPackageReference "CustomPlugins" */;
+			productName = "plugin:CustomRswiftGenerateInternalResources";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B8ED44912B53857900F560DC /* Project object */;
 }
